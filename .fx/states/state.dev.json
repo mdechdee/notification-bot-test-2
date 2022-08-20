@@ -1,0 +1,36 @@
+{
+    "solution": {
+        "teamsAppTenantId": "4b0a13ca-95ed-42b4-a17b-914261b8c920",
+        "subscriptionId": "59d3b9aa-86be-4a29-a508-4cc3caa06153",
+        "subscriptionName": "Azure subscription 1",
+        "tenantId": "4b0a13ca-95ed-42b4-a17b-914261b8c920",
+        "needCreateResourceGroup": false,
+        "resourceGroupName": "notificationbottest_2-dev-rg",
+        "location": "East US",
+        "resourceNameSuffix": "5a4f42",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "4b0a13ca-95ed-42b4-a17b-914261b8c920",
+        "teamsAppId": "d7581200-b006-49d5-840a-c8c92c5b1917",
+        "teamsAppUpdatedAt": 1661025498199
+    },
+    "fx-resource-identity": {
+        "identityName": "notificatidevf9cc83",
+        "identityResourceId": "/subscriptions/59d3b9aa-86be-4a29-a508-4cc3caa06153/resourceGroups/notificationbottest_2-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/notificatidevf9cc83",
+        "identityClientId": "4cd630c8-d5f5-44c9-ad8a-83a822b27f41"
+    },
+    "fx-resource-bot": {
+        "botId": "44b7c166-eb36-459f-9972-d6e6b6930ab8",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "06bf9154-7722-4691-83af-5a135df0b69f",
+        "skuName": "B1",
+        "siteName": "notificatidevf9cc83bot",
+        "validDomain": "notificatidevf9cc83bot.azurewebsites.net",
+        "appServicePlanName": "notificatidevf9cc83bot",
+        "resourceId": "/subscriptions/59d3b9aa-86be-4a29-a508-4cc3caa06153/resourceGroups/notificationbottest_2-dev-rg/providers/Microsoft.Web/sites/notificatidevf9cc83bot",
+        "siteEndpoint": "https://notificatidevf9cc83bot.azurewebsites.net"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}
