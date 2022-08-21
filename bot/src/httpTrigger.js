@@ -5,21 +5,21 @@ const { getPriorityMessagesClient } = require("./getPriorityMessages");
 
 // HTTP trigger to send notification. You need to add authentication / authorization for this API. Refer https://aka.ms/teamsfx-notification for more details.
 module.exports = async function (context, req) {
-  let responseBody = "HELL WORLD";
+  let message = "HELL WORLD";
   try{
     const response = await getPriorityMessagesClient.get("HttpExample");
-    responseBody = response.body;
+    message = response.data.message;
   }catch(err){
-    responseBody = "Failed to call getPriorityMessages endpoint: " + err;
+    message = "Failed to call getPriorityMessages endpoint: " + err;
   }
 
   for (const target of await bot.notification.installations()) {
     await target.sendAdaptiveCard(
       AdaptiveCards.declare(notificationTemplate).render({
-        title: "Check out this message you might have missed!",
+        title: "Check out this message you have missed!",
         appName: "Noti Application",
-        description: `THIS IS SAMPLE MESSAGE AND A MOCKUP URL: ${responseBody}`,
-        notificationUrl: "https://teams.microsoft.com/l/message/19:4ae96d30c78d4b1381e123cb16786709@thread.tacv2/1661006752435?tenantId=4b0a13ca-95ed-42b4-a17b-914261b8c920&groupId=dcc10f25-9096-4a23-9ae3-632fd490f539&parentMessageId=1661006752435&teamName=Sales%20and%20Marketing&channelName=General&createdTime=1661006752435&allowXTenantAccess=false",
+        description: `${message.body.content}`,
+        notificationUrl: `${message.webUrl}`
       })
     );
   }
